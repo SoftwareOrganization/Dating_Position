@@ -5,12 +5,17 @@ import java.util.List;
 
 import cn.bmob.v3.Bmob;
 import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.datatype.BmobGeoPoint;
 import cn.bmob.v3.datatype.BmobPointer;
 import cn.bmob.v3.datatype.BmobRelation;
 import cn.bmob.v3.listener.DeleteListener;
 import cn.bmob.v3.listener.FindListener;
 import cn.bmob.v3.listener.UpdateListener;
 
+import com.baidu.mapapi.model.LatLng;
+import com.baidu.mapapi.utils.route.BaiduMapRoutePlan;
+import com.baidu.mapapi.utils.route.RouteParaOption;
+import com.baidu.mapapi.utils.route.RouteParaOption.EBusStrategyType;
 import com.bmob.im.demo.bean.DatePosition;
 import com.bmob.im.demo.bean.User;
 import com.bmob.im.demo.ui.BaseActivity;
@@ -52,7 +57,11 @@ public class DateDetailsActivity extends BaseActivity implements OnClickListener
 			@Override
 			public void onClick() {
 				// TODO Auto-generated method stub
-				
+				if (!currentUser.getObjectId().equals(date.getCreatorObjectId())) {
+					ShowToast("您不是聚会创建者，没有权限修改聚会信息");
+				}else {
+					// 进入聚会修改界面
+				}
 			}
 		});
 		
@@ -210,6 +219,27 @@ public class DateDetailsActivity extends BaseActivity implements OnClickListener
 				// TODO Auto-generated method stub
 				// 开始聚会
 				// 通知聚会成员开始聚会
+				// 天安门坐标
+			    double mLat1 = Double.parseDouble(CustomApplcation.getInstance().getLatitude());
+			    double mLon1 = Double.parseDouble(CustomApplcation.getInstance().getLongtitude());
+			    // 百度大厦坐标
+			    BmobGeoPoint point = date.getLocation();
+			    double mLat2 = point.getLatitude();
+			    double mLon2 = point.getLongitude();
+			    LatLng pt_start = new LatLng(mLat1, mLon1);
+			    LatLng pt_end = new LatLng(mLat2, mLon2);
+			    // 构建 route搜索参数以及策略，起终点也可以用name构造
+			    RouteParaOption para = new RouteParaOption()
+			        .startPoint(pt_start)
+			        .endPoint(pt_end)
+			        .busStrategyType(EBusStrategyType.bus_recommend_way);
+			    try {
+			        BaiduMapRoutePlan.openBaiduMapTransitRoute(para, DateDetailsActivity.this);
+				} catch (Exception e) {
+			        e.printStackTrace();
+			    }
+			    //结束调启功能时调用finish方法以释放相关资源
+			    // BaiduMapRoutePlan.finish(DateDetailsActivity.this);
 			}
 			
 			

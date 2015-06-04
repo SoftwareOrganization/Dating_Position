@@ -15,6 +15,7 @@ import com.bmob.im.demo.ui.BaseActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewDebug.FlagToString;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
@@ -26,6 +27,8 @@ public class MyDatePositionManage extends BaseActivity implements OnItemClickLis
 	List<DatePosition> mData;
 	
 	User currentUser;
+	
+	Boolean flag = false;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +54,7 @@ public class MyDatePositionManage extends BaseActivity implements OnItemClickLis
 	}
 	
 	public void fetchData() {
+		
 		BmobQuery<DatePosition> query = new BmobQuery<DatePosition>();
 		ShowLog("正在获取数据");
 		query.addWhereRelatedTo("myDates", new BmobPointer(currentUser));
@@ -59,16 +63,16 @@ public class MyDatePositionManage extends BaseActivity implements OnItemClickLis
 			@Override
 			public void onSuccess(List<DatePosition> arg0) {
 				// TODO Auto-generated method stub
+				mData.addAll(arg0);
 				if (arg0.size() > 0) {
-					
 					ShowLog("数量为："  + arg0.size());
-					mData.addAll(arg0);
 					
 					mAdapter.updateData(mData);
 				}
 				
 				else {
 					ShowLog("没有查询到数据");
+					mAdapter.updateData(mData);
 				}
 			}
 			
@@ -94,6 +98,11 @@ public class MyDatePositionManage extends BaseActivity implements OnItemClickLis
 	@Override
 	public void onResume(){
 		super.onResume();
-		fetchData();
+		if (flag == true) {
+			mData.clear();
+			fetchData();
+		}
+		
+		flag = true;
 	}
 }
