@@ -24,6 +24,7 @@ import com.bmob.im.demo.view.dialog.DialogTips;
 
 import android.app.Activity;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -42,6 +43,7 @@ public class DateDetailsActivity extends BaseActivity implements OnClickListener
 	User currentUser;
 	
 	StringBuilder date_member = new StringBuilder();
+	private boolean flag = false;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +63,10 @@ public class DateDetailsActivity extends BaseActivity implements OnClickListener
 					ShowToast("您不是聚会创建者，没有权限修改聚会信息");
 				}else {
 					// 进入聚会修改界面
+					Intent intent = new Intent();
+					intent.setClass(DateDetailsActivity.this, EditDateActivity.class);
+					intent.putExtra("date", date);
+					startActivity(intent);
 				}
 			}
 		});
@@ -246,5 +252,69 @@ public class DateDetailsActivity extends BaseActivity implements OnClickListener
 		});
 		
 		tips.show();
+	}
+	
+	@Override
+	public void onResume(){
+		super.onResume();
+		if (flag  == true) {
+			updateView();
+		}
+		
+		flag = true;
+	}
+	
+	public void updateView() {
+		
+		BmobQuery<DatePosition> query = new BmobQuery<DatePosition>();
+		query.addWhereEqualTo("objectId", date.getObjectId());
+		query.findObjects(DateDetailsActivity.this, new FindListener<DatePosition>() {
+
+			@Override
+			public void onError(int arg0, String arg1) {
+				// TODO Auto-generated method stub
+				ShowToast(R.string.network_tips);
+			}
+
+			@Override
+			public void onSuccess(List<DatePosition> arg0) {
+				// TODO Auto-generated method stub
+				if (arg0.size() > 0) {
+					date = arg0.get(0);
+					
+					tv_date_name.setText(date.getDateName());
+					tv_date_desc.setText(date.getDateDesc());
+					tv_date_time.setText(date.getDateTime().getDate());
+					tv_date_position.setText(date.getDatePosition());
+					
+					
+					BmobQuery<User> query = new BmobQuery<User>();
+					query.addWhereRelatedTo("datemember", new BmobPointer(date));
+					query.findObjects(DateDetailsActivity.this, new FindListener<User>() {
+						
+						@Override
+						public void onSuccess(List<User> arg0) {
+							// TODO Auto-generated method stub
+							date_member = null;
+							date_member = new StringBuilder();
+							for (Iterator<User> iterator = arg0.iterator(); iterator.hasNext();) {
+								User user = (User) iterator.next();
+								date_member.append(user.getUsername()).append(" ");
+							}
+							
+							tv_date_member.setText(date_member.toString());
+						}
+						
+						@Override
+						public void onError(int arg0, String arg1) {
+							// TODO Auto-generated method stub
+							ShowToast(R.string.network_tips);
+						}
+					});
+				}
+			}
+		});
+		
+		
 	}
 }

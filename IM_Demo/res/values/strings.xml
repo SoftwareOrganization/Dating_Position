@@ -65,5 +65,6 @@
     <string name="title_activity_my_date_position_manage">MyDatePositionManage</string>
     <string name="title_activity_date_details">DateDetailsActivity</string>
     <string name="title_activity_date_navi">DateNaviActivity</string>
+    <string name="title_activity_edit_date">EditDateActivity</string>
 
 </resources>
