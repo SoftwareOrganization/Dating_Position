@@ -1,0 +1,213 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+    
+    <include
+        android:id="@+id/common_actionbar"
+        layout="@layout/include_action_bar" />
+    
+    <ScrollView 
+        android:layout_width="fill_parent"
+        android:layout_below="@+id/common_actionbar"
+        android:layout_height="fill_parent">
+        
+        <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        
+        <RelativeLayout 
+            android:layout_width="fill_parent"
+            android:padding="15dp"
+            android:layout_height="wrap_content">
+            
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_height="wrap_content"
+                android:text="创建者"/>
+            
+            <TextView 
+                android:id="@+id/date_details_date_creator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="deeplee"/>
+            
+        </RelativeLayout>
+        
+        <TextView 
+            android:layout_height="0.5dp"
+            android:background="#999999"
+            android:layout_width="fill_parent"/>
+        
+        <RelativeLayout 
+            android:layout_width="fill_parent"
+            android:padding="15dp"
+            android:layout_height="wrap_content">
+            
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_height="wrap_content"
+                android:text="聚会名称"/>
+            
+            <TextView 
+                android:id="@+id/date_details_date_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="小同学聚会"/>
+            
+        </RelativeLayout>
+        
+        <TextView 
+            android:layout_height="0.5dp"
+            android:background="#999999"
+            android:layout_width="fill_parent"/>
+        
+        <RelativeLayout 
+            android:layout_width="fill_parent"
+            android:padding="15dp"
+            android:layout_height="wrap_content">
+            
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_height="wrap_content"
+                android:text="聚会描述"/>
+            
+            <TextView 
+                android:id="@+id/date_details_date_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="小同学聚会"/>
+            
+        </RelativeLayout>
+        
+        <TextView 
+            android:layout_height="0.5dp"
+            android:background="#999999"
+            android:layout_width="fill_parent"/>
+        
+        <RelativeLayout 
+            android:layout_width="fill_parent"
+            android:padding="15dp"
+            android:layout_height="wrap_content">
+            
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_height="wrap_content"
+                android:text="聚会时间"/>
+            
+            <TextView 
+                android:id="@+id/date_details_date_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="2015.6.1 08:00"/>
+            
+        </RelativeLayout>
+        
+        <TextView 
+            android:layout_height="0.5dp"
+            android:background="#999999"
+            android:layout_width="fill_parent"/>
+        
+        <RelativeLayout 
+            android:layout_width="fill_parent"
+            android:padding="15dp"
+            android:layout_height="wrap_content">
+            
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_height="wrap_content"
+                android:text="聚会地点"/>
+            
+            <TextView 
+                android:id="@+id/date_details_date_position"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="四川大学江安校区"/>
+            
+        </RelativeLayout>
+        
+        <TextView 
+            android:layout_height="0.5dp"
+            android:background="#999999"
+            android:layout_width="fill_parent"/>
+        
+        <RelativeLayout 
+            android:layout_width="fill_parent"
+            android:padding="15dp"
+            android:layout_height="wrap_content">
+            
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_height="wrap_content"
+                android:text="聚会成员"/>
+            
+            <TextView 
+                android:id="@+id/date_details_date_member"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="四川大学江安校区"/>
+            
+        </RelativeLayout>
+        
+        <TextView 
+            android:layout_height="0.5dp"
+            android:background="#999999"
+            android:layout_width="fill_parent"/>
+        
+        <Button 
+            android:id="@+id/delete_date"
+            android:layout_marginTop="20dp"
+            android:layout_width="fill_parent"
+            android:text="取消聚会"
+            android:textColor="#ffffff"
+            android:padding="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="#ff0000"
+            android:layout_height="wrap_content"/>
+        
+        <Button 
+            android:id="@+id/exit_date"
+            android:layout_marginTop="20dp"
+            android:layout_width="fill_parent"
+            android:text="退出聚会"
+            android:textColor="#ffffff"
+            android:padding="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="#ff0000"
+            android:layout_height="wrap_content"/>
+        
+        <Button 
+            android:id="@+id/start_date"
+            android:layout_marginTop="20dp"
+            android:layout_width="fill_parent"
+            android:text="开始聚会"
+            android:textColor="#ffffff"
+            android:padding="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="#ff0000"
+            android:layout_height="wrap_content"/>
+        
+    </LinearLayout>
+        
+    </ScrollView>
+    
+    
+
+</RelativeLayout>

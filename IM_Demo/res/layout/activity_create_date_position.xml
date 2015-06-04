@@ -1,0 +1,147 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+    
+    <include
+        android:id="@+id/common_actionbar"
+        layout="@layout/include_action_bar" />
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:orientation="vertical"
+        android:layout_below="@+id/common_actionbar"
+        android:layout_height="wrap_content">
+        
+        <RelativeLayout 
+            android:layout_width="fill_parent"
+            android:background="#ffffff"
+            android:padding="5dp"
+            android:layout_height="wrap_content">
+  			
+            <TextView 
+                android:layout_width="wrap_content"
+                android:text="聚会名称"
+                android:id="@+id/name_tv"
+                android:layout_centerVertical="true"
+                android:layout_height="wrap_content"/>
+            
+            <EditText 
+                android:id="@+id/create_date_position_name_et"
+                android:layout_width="fill_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:hint="请输入聚会名称"
+                android:textSize="15sp"
+                android:layout_toRightOf="@+id/name_tv"
+                android:layout_height="wrap_content"/>
+            
+        </RelativeLayout>
+        
+        <RelativeLayout 
+            android:layout_width="fill_parent"
+            android:background="#ffffff"
+            android:padding="5dp"
+            android:layout_height="wrap_content">
+  			
+            <TextView 
+                android:layout_width="wrap_content"
+                android:text="聚会描述"
+                android:id="@+id/desc_tv"
+                android:layout_centerVertical="true"
+                android:layout_height="wrap_content"/>
+            
+            <EditText 
+                android:id="@+id/create_date_position_desc_et"
+                android:layout_width="fill_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:hint="请输入聚会描述"
+                android:textSize="15sp"
+                android:layout_toRightOf="@+id/desc_tv"
+                android:layout_height="wrap_content"/>
+            
+        </RelativeLayout>
+        
+        <RelativeLayout 
+            android:layout_width="fill_parent"
+            android:background="#ffffff"
+            android:padding="5dp"
+            android:layout_height="wrap_content">
+  			
+            <TextView 
+                android:layout_width="wrap_content"
+                android:text="聚会时间"
+                android:id="@+id/time_tv"
+                android:layout_centerVertical="true"
+                android:layout_height="wrap_content"/>
+            
+            <EditText 
+                android:id="@+id/create_date_position_time_et"
+                android:layout_width="fill_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:hint="选择聚会时间"
+                android:textSize="15sp"
+                android:editable="false"
+                android:layout_toRightOf="@+id/time_tv"
+                android:layout_height="wrap_content"/>
+            
+        </RelativeLayout>
+        
+        <RelativeLayout 
+            android:layout_width="fill_parent"
+            android:background="#ffffff"
+            android:padding="5dp"
+            android:layout_height="wrap_content">
+  			
+            <TextView 
+                android:layout_width="wrap_content"
+                android:text="聚会地点"
+                android:id="@+id/position_tv"
+                android:layout_centerVertical="true"
+                android:layout_height="wrap_content"/>
+            
+            <EditText 
+                android:id="@+id/create_date_position_position_et"
+                android:layout_width="fill_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:hint="选择聚会地点"
+                android:textSize="15sp"
+                android:editable="false"
+                android:layout_toRightOf="@+id/position_tv"
+                android:layout_height="wrap_content"/>
+            
+        </RelativeLayout>
+        
+        <RelativeLayout 
+            android:layout_width="fill_parent"
+            android:background="#ffffff"
+            android:padding="5dp"
+            android:layout_height="wrap_content">
+  			
+            <TextView 
+                android:layout_width="wrap_content"
+                android:text="聚会成员"
+                android:id="@+id/member_tv"
+                android:layout_centerVertical="true"
+                android:layout_height="wrap_content"/>
+            
+            <EditText 
+                android:id="@+id/create_date_position_member_et"
+                android:layout_width="fill_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:hint="邀请聚会成员"
+                android:textSize="15sp"
+                android:editable="false"
+                android:layout_toRightOf="@+id/member_tv"
+                android:layout_height="wrap_content"/>
+            
+        </RelativeLayout>
+        
+    </LinearLayout>
+
+</RelativeLayout>
