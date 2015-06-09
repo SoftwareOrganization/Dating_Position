@@ -1,0 +1,47 @@
+用get请求
+注册：http://ip:8000/zhuce/?username=haha&password=haha&position=119,12&sex=F&online=1
+（sex男用M返回json格式数据{"success": true}，失败为false）
+登陆：http://ip:8000/denglu/?username=haha&password=haha
+（{返回"newfriend": 0, "userID": 1, "success": true, "sex": "F"}）
+查看信息
+http://iP:8000/showUserInfo/?userID=1
+（返回{"Username": "haha", "position": "119,12", "online": 1, "success": true, "sex": "F"}）
+添加聚会：
+http://ip:8000/newJvhui/?datetime=2015-06-02 00:00:00&userID=1&datename=dateTest&text=123&destination=119,13&member1ID=1&member2ID=2&member3ID=0&member4ID=0&member5ID=0
+（返回{"text": "123", "destination": "119,13", "UserID": 1, "success": true, "datetime": "2015-06-02 15:30:36"}）
+朋友定位：
+http://ip:8000/friendsInMap/?dateID=1
+（返回{"positions": {"1": "119,12", "2": "119,12"}, "success": true}，position中为id和经纬度）
+发消息
+http://ip:8000/communication/?fromID=1&toID=2&content=456&msgTime=2015-06-02%2000:00:00
+查看发送信息列表
+（返回{'success':True}）
+http://localhost:8000/showFromMessageList/?userID=1
+（返回{"message": {"2": 1}, "success": true}，message中表示toID和messageID）
+查看收到的消息
+http://localhost:8000/showToMessageList/?userID=1
+（返回{"message": {"2": 2}, "success": true}message中表示fromID和messageID）
+查看消息内容
+http://localhost:8000/showcommunication/?messID=1
+（返回{"Content": "456", "success": true, "ToID": 2, "isRead": "0", "FromID": 1, "msgTime": "2015-06-02 00:00:00"}）
+查看与某人的聊天记录
+http://localhost:8000/showMessagejilu/?fromID=1&toID=2
+（返回{"messlist": {"1": "456", "4": "56"}, "success": true}，messlist分别表示messageID和内容）
+邀请好友
+http://localhost:8000/addFriend/?userID=1&friendsID=2
+（返回{"success": true}）
+验证好友
+http://localhost:8000/confirmFriend/?userID=1&friendsID=2
+（返回{"success": true}）
+查看好友列表
+http://localhost:8000/showFriendList/?userID=1
+返回{"friends": [2], "success": true，friends为好友id数组}
+删除聚会
+http://localhost:8000/delDate/?dateID=2
+（返回{"success": true}）
+删除好友
+http://localhost:8000/delFriend/?userID=2&friendID=1
+（返回{"success": true}）
+查看聚会列表
+http://localhost:8000/showDateList/?userID=1
+(返回{"data": [{"DateID": 1, "DateName": "dateTest", "time": "2015-06-02 15:30:36"}, {"DateID": 3, "DateName": "dateTest", "time": "2015-06-02 00:00:00"}, {"DateID": 4, "DateName": "dateTest", "time": "2015-06-02 00:00:00"}], "success": true})

@@ -1,0 +1,291 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'yonghu/css/main.css' %}"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
+<meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
+<meta name="author" content="Codrops" />
+<link rel="shortcut icon" href="../favicon.ico"> 
+<link rel="stylesheet" type="text/css" href="{% static 'yonghu/css/demo.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'yonghu/css/style.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'yonghu/css/animate-custom.css' %}" />
+<meta  http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="{% static 'yonghu/js/main.js' %}"></script>
+<script type="text/javascript" src="{% static 'yonghu/js/jquery-2.1.1.min.js' %}"></script>
+</head>
+<body>
+	<div id="regisAndlogin">
+					<a href="javascript:void(0);" onclick="change();"><img src="{% static 'yonghu/images/back.png' %}"/></a>
+		    		<a class="hiddenanchor" id="toregister"></a>
+                    <a class="hiddenanchor" id="tologin"></a>
+                    <div id="wrapper">
+                        <div id="login" class="animate form">
+                            <form  action="/denglu" autocomplete="on"> 
+                                <h1>登陆</h1> 
+                                <p> 
+                                    <label for="username" class="uname" data-icon="u" >用户名</label>
+                                    <input id="username" name="username" required="required" type="text" style="padding: 10px 5px 10px 32px;"/>
+                                </p>
+                                <p> 
+                                    <label for="password" class="youpasswd" data-icon="p">账号密码</label>
+                                    <input id="password" name="password" required="required" type="password" style="padding: 10px 5px 10px 32px;"/> 
+                                </p>
+                                <p class="keeplogin"> 
+									<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" style="padding: 10px 5px 10px 32px;"/> 
+									<label for="loginkeeping">记住密码</label>
+								</p>
+                                <p class="login button"> 
+                                    <input type="submit" value="登陆" /> 
+								</p>
+                                <p class="change_link">
+									还没有账号?
+									<a href="#toregister" class="to_register">注册</a>
+								</p>
+                            </form>
+                        </div>
+
+                        <div id="register" class="animate form">
+                            <form  action="/zhuce" autocomplete="on"> 
+                                <h1> 注册 </h1> 
+                                <p> 
+                                    <label for="usernamesignup" class="uname" data-icon="u">你的用户名</label>
+                                    <input id="usernamesignup" name="usernamesignup" required="required" type="text" style="padding: 10px 5px 10px 32px;"/>
+                                </p>
+                               
+                                <p> 
+                                    <label for="passwordsignup" class="youpasswd" data-icon="p">你的密码 </label>
+                                    <input id="passwordsignup" name="passwordsignup" required="required" type="password" style="padding: 10px 5px 10px 32px;"/>
+                                </p>
+                                <p> 
+                                    <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">请确认密码 </label>
+                                    <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" style="padding: 10px 5px 10px 32px;"/>
+                                </p>
+                                <p class="signin button"> 
+									<input type="submit" value="注册" /> 
+								</p>
+                                <p class="change_link">  
+									已经有账号?
+									<a href="#tologin" class="to_register"> 登陆 </a>
+								</p>
+                            </form>
+                        </div>
+						
+                    </div>
+                 
+	</div>
+	<div id="tou">
+	<div id="header" class="h1">
+		<div class="logo">
+			<a href="index.html">	
+				<div class="logo_font">悠然众筹</div>
+			</a>
+		</div>
+		<div class="hr">
+			<ul class="hu">
+				<a href="/raisePublic" ><li class="hl" >发起众筹</li></a>
+				<a href="#sp"><li class="hl">众筹商品</li></a>
+			</ul>
+			<form>
+			<div class="header_findP" >
+			<input type="text" class="t_find"/>
+			<button style="border:0px; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#3194c6), to(#5bacd6));
+  background: -moz-linear-gradient(#3194c6, #5bacd6);color:white;text-shadow: 0 -1px 1px rgba(19,65,88,.8);">搜索</button>
+			</div>
+			</form>
+			<ul class="huu">
+				<a href="#toregister" onclick="change();"><li class="hl">注册</li></a>
+				<a href="#tologin" onclick="change();"><li class="hl">登录</li></a>
+			</ul>
+		</div>
+	</div>
+	<div id="slider">
+		<div id="container" class="cube">
+			<div class="shape one"></div>
+			<div class="shape two"></div>
+			<div class="shape three"></div>
+		</div>
+		<div class="db">
+			<div class="dbz">
+				<a href="javacript:void(0)"><div class="dbk" onclick="bianhuan1()"></div></a>
+				<a href="javacript:void(0)"><div class="dbk" onclick="bianhuan2()"></div></a>
+				<a href="javacript:void(0)"><div class="dbk" onclick="bianhuan3()"></div></a>
+			</div>
+		</div>
+	</div>
+	</div>
+	<div class="bl" id="sp">
+		<div class="bl_header">
+			<div class="blname">
+				<h1>众筹商品</h1>
+			</div>
+		</div>
+		<div class="bl_main">
+			<div class="m-headline">
+				<span class="m-headfont">热门项目</span>
+				<ul class="huu2">
+				<a href="javacript:void(0)"><li class="hf">最新上线</li></a>
+				<a href="javacript:void(0)"><li class="hf">将要结束</li></a>
+				<a href="javacript:void(0)"><li class="hf">最多支持</li></a>
+				<a href="javacript:void(0)"><li class="hf">成功案例</li></a>
+				</ul>
+			</div>
+			<div class="m-main">
+                {% for chanpin in chanpins%}
+
+				<div class="m-part">
+					<a href="/goods"><div class="partone">
+					</div>
+					</a>
+					<div class="parttwo">
+						<a  href="/goods"><span class="ptt">{{chanpin.Name}}</span></a>
+					</div>
+					<div class="partthree">
+						<span class="ftone">已筹资</span><span class="fttwo">￥{{chanpin.hasSale}}</span>
+						<div class="jdt"><div class="jd"></div></div>
+						<span class="fttwo ftthree"{{percent}}%</span><span class="ftone ftfour">剩余{{ chanpin.DueTime |add: -nowTime}}天</span>
+					</div>
+				</div>
+                {%endfor%}
+				<div class="m-part">
+					<a href="javacript:void(0)"><div class="partone">
+					</div>
+					</a>
+					<div class="parttwo">
+						<a  href="javacript:void(0)"><span class="ptt">GEEKERY无线运动激励耳机——美国队长经典复刻版</span></a>
+					</div>
+					<div class="partthree">
+						<span class="ftone">已筹资</span><span class="fttwo">￥113,522</span>
+						<div class="jdt"><div class="jd"></div></div>
+						<span class="fttwo ftthree">80%</span><span class="ftone ftfour">剩余32天</span>
+					</div>
+				</div>
+				<div class="m-part">
+					<a href="javacript:void(0)"><div class="partone">
+					</div>
+					</a>
+					<div class="parttwo">
+						<a  href="javacript:void(0)"><span class="ptt">GEEKERY无线运动激励耳机——美国队长经典复刻版</span></a>
+					</div>
+					<div class="partthree">
+						<span class="ftone">已筹资</span><span class="fttwo">￥113,522</span>
+						<div class="jdt"><div class="jd"></div></div>
+						<span class="fttwo ftthree">80%</span><span class="ftone ftfour">剩余32天</span>
+					</div>
+				</div>
+				<div class="m-part">
+					<a href="javacript:void(0)"><div class="partone">
+					</div>
+					</a>
+					<div class="parttwo">
+						<a  href="javacript:void(0)"><span class="ptt">GEEKERY无线运动激励耳机——美国队长经典复刻版</span></a>
+					</div>
+					<div class="partthree">
+						<span class="ftone">已筹资</span><span class="fttwo">￥113,522</span>
+						<div class="jdt"><div class="jd"></div></div>
+						<span class="fttwo ftthree">80%</span><span class="ftone ftfour">剩余32天</span>
+					</div>
+				</div>
+				<div class="m-part">
+					<a href="javacript:void(0)"><div class="partone">
+					</div>
+					</a>
+					<div class="parttwo">
+						<a  href="javacript:void(0)"><span class="ptt">GEEKERY无线运动激励耳机——美国队长经典复刻版</span></a>
+					</div>
+					<div class="partthree">
+						<span class="ftone">已筹资</span><span class="fttwo">￥113,522</span>
+						<div class="jdt"><div class="jd"></div></div>
+						<span class="fttwo ftthree">80%</span><span class="ftone ftfour">剩余32天</span>
+					</div>
+				</div>
+				<div class="m-part">
+					<a href="javacript:void(0)"><div class="partone">
+					</div>
+					</a>
+					<div class="parttwo">
+						<a  href="javacript:void(0)"><span class="ptt">GEEKERY无线运动激励耳机——美国队长经典复刻版</span></a>
+					</div>
+					<div class="partthree">
+						<span class="ftone">已筹资</span><span class="fttwo">￥113,522</span>
+						<div class="jdt"><div class="jd"></div></div>
+						<span class="fttwo ftthree">80%</span><span class="ftone ftfour">剩余32天</span>
+					</div>
+				</div>
+				<div class="m-part">
+					<a href="javacript:void(0)"><div class="partone">
+					</div>
+					</a>
+					<div class="parttwo">
+						<a  href="javacript:void(0)"><span class="ptt">GEEKERY无线运动激励耳机——美国队长经典复刻版</span></a>
+					</div>
+					<div class="partthree">
+						<span class="ftone">已筹资</span><span class="fttwo">￥113,522</span>
+						<div class="jdt"><div class="jd"></div></div>
+						<span class="fttwo ftthree">80%</span><span class="ftone ftfour">剩余32天</span>
+					</div>
+				</div>
+				<div class="m-part">
+					<a href="javacript:void(0)"><div class="partone">
+					</div>
+					</a>
+					<div class="parttwo">
+						<a  href="javacript:void(0)"><span class="ptt">GEEKERY无线运动激励耳机——美国队长经典复刻版</span></a>
+					</div>
+					<div class="partthree">
+						<span class="ftone">已筹资</span><span class="fttwo">￥113,522</span>
+						<div class="jdt"><div class="jd"></div></div>
+						<span class="fttwo ftthree">80%</span><span class="ftone ftfour">剩余32天</span>
+					</div>
+				</div>
+				<div class="m-part">
+					<a href="javacript:void(0)"><div class="partone">
+					</div>
+					</a>
+					<div class="parttwo">
+						<a  href="javacript:void(0)"><span class="ptt">GEEKERY无线运动激励耳机——美国队长经典复刻版</span></a>
+					</div>
+					<div class="partthree">
+						<span class="ftone">已筹资</span><span class="fttwo">￥113,522</span>
+						<div class="jdt"><div class="jd"></div></div>
+						<span class="fttwo ftthree">80%</span><span class="ftone ftfour">剩余32天</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="bl">
+		<div class="bl_header">
+			<div class="blname">
+				<h1>团队成员介绍</h1>
+			</div>
+		</div>
+		<div class="bl_main">
+			<div class="people">
+				<div class="pimg"></div>
+				<h1 class="pn">潘悠然</h1>
+				<div class="pf">国内知名的移动互联网领域的架构师，讲师 。10年移动开发经验。架构师，丰富的海外工作经验及管理经验。</div>
+			</div>
+			<div class="people">
+				<div class="pimg"></div>
+				<h1 class="pn">黄奕韬</h1>
+				<div class="pf">国内知名的移动互联网领域的架构师，讲师 。10年移动开发经验。架构师，丰富的海外工作经验及管理经验。</div>
+			</div>
+			<div class="people">
+				<div class="pimg"></div>
+				<h1 class="pn">朱晓伟</h1>
+				<div class="pf">国内知名的移动互联网领域的架构师，讲师 。10年移动开发经验。架构师，丰富的海外工作经验及管理经验。</div>
+			</div>
+			<div class="people">
+				<div class="pimg"></div>
+				<h1 class="pn">贝永番</h1>
+				<div class="pf">国内知名的移动互联网领域的架构师，讲师 。10年移动开发经验。架构师，丰富的海外工作经验及管理经验。</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+	<div id="footer"></div>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/main.css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
+<meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
+<meta name="author" content="Codrops" />
+<link rel="shortcut icon" href="../favicon.ico"> 
+<link rel="stylesheet" type="text/css" href="css/demo.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
+<meta  http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+</head>
+<body>
+	<div id="regisAndlogin">
+					<a href="javascript:void(0);" onclick="change();"><img src="images/back.png"/></a>
+		    		<a class="hiddenanchor" id="toregister"></a>
+                    <a class="hiddenanchor" id="tologin"></a>
+                    <div id="wrapper">
+                        <div id="login" class="animate form">
+                            <form  action="mysuperscript.php" autocomplete="on"> 
+                                <h1>登陆</h1> 
+                                <p> 
+                                    <label for="username" class="uname" data-icon="u" >用户名</label>
+                                    <input id="username" name="username" required="required" type="text" style="padding: 10px 5px 10px 32px;"/>
+                                </p>
+                                <p> 
+                                    <label for="password" class="youpasswd" data-icon="p">账号密码</label>
+                                    <input id="password" name="password" required="required" type="password" style="padding: 10px 5px 10px 32px;"/> 
+                                </p>
+                                <p class="keeplogin"> 
+									<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" style="padding: 10px 5px 10px 32px;"/> 
+									<label for="loginkeeping">记住密码</label>
+								</p>
+                                <p class="login button"> 
+                                    <input type="submit" value="登陆" /> 
+								</p>
+                                <p class="change_link">
+									还没有账号?
+									<a href="#toregister" class="to_register">注册</a>
+								</p>
+                            </form>
+                        </div>
+
+                        <div id="register" class="animate form">
+                            <form  action="mysuperscript.php" autocomplete="on"> 
+                                <h1> 注册 </h1> 
+                                <p> 
+                                    <label for="usernamesignup" class="uname" data-icon="u">你的用户名</label>
+                                    <input id="usernamesignup" name="usernamesignup" required="required" type="text" style="padding: 10px 5px 10px 32px;"/>
+                                </p>
+                               
+                                <p> 
+                                    <label for="passwordsignup" class="youpasswd" data-icon="p">你的密码 </label>
+                                    <input id="passwordsignup" name="passwordsignup" required="required" type="password" style="padding: 10px 5px 10px 32px;"/>
+                                </p>
+                                <p> 
+                                    <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">请确认密码 </label>
+                                    <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" style="padding: 10px 5px 10px 32px;"/>
+                                </p>
+                                <p class="signin button"> 
+									<input type="submit" value="注册" /> 
+								</p>
+                                <p class="change_link">  
+									已经有账号?
+									<a href="#tologin" class="to_register"> 登陆 </a>
+								</p>
+                            </form>
+                        </div>
+						
+                    </div>
+                 
+	</div>
+	<div id="ttou">
+	<div id="header" class="h1">
+		<div class="logo">
+			<a href="index.html">
+				
+				<div class="logo_font">悠然众筹</div>
+			</a>
+		</div>
+		<div class="hr">
+			<ul class="hu">
+				<a href="raisePublic.html" ><li class="hl" >发起众筹</li></a>
+				<a href="#sp"><li class="hl">众筹商品</li></a>
+			</ul>
+			<form>
+			<div class="header_findP" >
+			<input type="text" class="t_find"/>
+			<button style="border:0px; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#3194c6), to(#5bacd6));
+  background: -moz-linear-gradient(#3194c6, #5bacd6);color:white;text-shadow: 0 -1px 1px rgba(19,65,88,.8);">搜索</button>
+			</div>
+			</form>
+			<ul class="huu">
+				<a href="#toregister" onclick="change();"><li class="hl">注册</li></a>
+				<a href="#tologin" onclick="change();"><li class="hl">登录</li></a>
+			</ul>
+		</div>
+	</div>
+	</div>
+	
+	<div id="jieshao">
+		<div class="js_right">
+		<div class="js_t"></div>
+		<div class="js_fenxiang"></div>
+		</div>
+		<div class="js_left">
+		<div class="js_m">GEEKERY无线运动激励耳机——美国队长经典复刻版</div>
+		<div class="js_z">我们是一群热爱运动，热爱音乐，热爱科技的小伙伴，我们希望用这三者让你我的生活更加美好和有趣。给大家带来这款无线运动激励耳机，美国队长经典复刻版。</div>
+		<div class="js_one">
+			<p class="js_wd">英雄超值档：</p>
+			<p class="js_wd">感谢您对我们的支持！您将以抢鲜价得到我们的无线运动激励耳机（美国队长经典复刻版）1个。</p>
+			<a href="#" class="a jg" ><span class="b">支持¥329</span></a>
+		</div>
+		<div class="js_one">
+			<p class="js_wd">英雄队友档：</p>
+			<p class="js_wd">感谢您对我们的支持！您将以抢鲜价得到我们的无线运动激励耳机（美国队长经典复刻版）2个。</p>
+			<a href="#" class="a jg"><span class="b">支持¥649</span></a>
+		</div>
+		<div class="js_one">
+			<p class="js_wd">英雄集结档：</p>
+			<p class="js_wd">感谢您对我们的支持！您将以抢鲜价得到我们的无线运动激励耳机（美国队长经典复刻版）30个。</p>
+			<a href="#" class="a jg" ><span class="b">支持¥9699</span></a>
+		</div>
+		<div class="js_more"><a href="#" class="a genduo"><span class="b">更多</span></a></div>
+		</div>
+	</div>
+	
+	
+	<div id="leave">
+		<div class="leave_main">
+			<div class="pinglun">
+				<div class="pinglun_head">
+					<div class="pz">评论（68）</div>
+				</div>
+				<div class="pinglun_main">
+					<div class="pinglun_p pp">
+						<textarea class="ptext"></textarea>
+						<a href="javacript:void(0)" class="aa"><span class="bb">发表回复</span></a>
+					</div>
+					<br/>
+					<div class="pinglun_p">
+						<div class="pinglun_n">
+							<img src="images/4.jpg" class="ntouxiang"/>
+						<div class="nr">
+							<p class="nname">悠然帅哥</p>
+							<p class="nneir">大家好</p>
+							</div>
+						</div>
+					</div>
+					<div class="pinglun_p">
+						<div class="pinglun_n">
+							<img src="images/id18.jpg" class="ntouxiang"/>
+						<div class="nr">
+							<p class="nname">hehe</p>
+							<p class="nneir">. 爱美丽，爱健康，希望生活变得更有情趣的，请看下我的项目。项目成功了，还有几天就要结束了，原价399元。活动价只要298元，需要的可以点击链接看下，谢谢！www.zhongchou.com/deal-show/id-113083。同时支持过的，请添加微信 DIY-Sex，，，，，方便给大家提供售后服务。谢谢！！！！</p>
+						</div>
+						</div>
+					</div>
+					<div class="pinglun_p">
+						<div class="pinglun_n">
+							<img src="images/id18.jpg" class="ntouxiang"/>
+						<div class="nr">
+							<p class="nname">hehe</p>
+							<p class="nneir">http://www.zhongchou.cn/deal-topic/id-119008#maodian 具有性价比的扫地机器人 粉丝们希望能得到大家肯定与坚持。谢谢</p>
+						</div>
+						</div>
+					</div>
+					<div class="pinglun_p">
+						<div class="pinglun_n">
+							<img src="images/id18.jpg" class="ntouxiang"/>
+						<div class="nr">
+							<p class="nname">hehe</p>
+							<p class="nneir">http://www.zhongchou.cn/deal-topic/id-119008#maodian 具有性价比的扫地机器人 粉丝们希望能得到大家肯定与坚持。谢谢</p>
+						</div>
+						</div>
+					</div>
+					<div class="pinglun_p">
+						<div class="pinglun_n">
+							<img src="images/id18.jpg" class="ntouxiang"/>
+						<div class="nr">
+							<p class="nname">hehe</p>
+							<p class="nneir">http://www.zhongchou.cn/deal-topic/id-119008#maodian 具有性价比的扫地机器人 粉丝们希望能得到大家肯定与坚持。谢谢</p>
+						</div>
+						</div>
+					</div>
+					<div class="pinglun_p">
+						<div class="pinglun_n">
+							<img src="images/id18.jpg" class="ntouxiang"/>
+						<div class="nr">
+							<p class="nname">hehe</p>
+							<p class="nneir">http://www.zhongchou.cn/deal-topic/id-119008#maodian 具有性价比的扫地机器人 粉丝们希望能得到大家肯定与坚持。谢谢</p>
+						</div>
+						</div>
+					</div>
+					<div class="pinglun_p">
+						<div class="pinglun_n">
+							<img src="images/id18.jpg" class="ntouxiang"/>
+						<div class="nr">
+							<p class="nname">hehe</p>
+							<p class="nneir">http://www.zhongchou.cn/deal-topic/id-119008#maodian 具有性价比的扫地机器人 粉丝们希望能得到大家肯定与坚持。谢谢</p>
+						</div>
+						</div>
+					</div>
+					<div class="pinglun_p">
+						<div class="pinglun_n">
+							<img src="images/id18.jpg" class="ntouxiang"/>
+						<div class="nr">
+							<p class="nname">hehe</p>
+							<p class="nneir">http://www.zhongchou.cn/deal-topic/id-119008#maodian 具有性价比的扫地机器人 粉丝们希望能得到大家肯定与坚持。谢谢</p>
+						</div>
+						</div>
+					</div>
+					<div class="pinglun_p">
+						<div class="pinglun_n">
+							<img src="images/id18.jpg" class="ntouxiang"/>
+						<div class="nr">
+							<p class="nname">hehe</p>
+							<p class="nneir">http://www.zhongchou.cn/deal-topic/id-119008#maodian 具有性价比的扫地机器人 粉丝们希望能得到大家肯定与坚持。谢谢</p>
+						</div>
+						</div>
+					</div>
+					<div class="pinglun_p">
+						<div class="pinglun_n">
+							<img src="images/id18.jpg" class="ntouxiang"/>
+						<div class="nr">
+							<p class="nname">hehe</p>
+							<p class="nneir">http://www.zhongchou.cn/deal-topic/id-119008#maodian 具有性价比的扫地机器人 粉丝们希望能得到大家肯定与坚持。谢谢</p>
+						</div>
+						</div>
+					</div>
+					<div class="pinglun_p">
+						<div class="pinglun_n">
+							<img src="images/id18.jpg" class="ntouxiang"/>
+						<div class="nr">
+							<p class="nname">hehe</p>
+							<p class="nneir">http://www.zhongchou.cn/deal-topic/id-119008#maodian 具有性价比的扫地机器人 粉丝们希望能得到大家肯定与坚持。谢谢</p>
+						</div>
+						</div>
+					</div>
+					<div class="pinglun_p">
+						<div class="_bottom">
+							<div class="n">
+							<a href="javacript:void(0)" class="a1"><span >首页</span></a>
+							<a href="javacript:void(0)" class="a1"  style="width:35px"><span >1</span></a>
+							<a href="javacript:void(0)" class="a1"  style="width:35px"><span >2</span></a>
+							<a href="javacript:void(0)" class="a1"  style="width:35px"><span >3</span></a>
+							<a href="javacript:void(0)" class="a1" style="width:35px"><span>4</span></a>
+							<a href="javacript:void(0)" class="a1"><span >尾页</span></a>
+							</div>
+						</div>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</div>
+	<div style="width:100%;height:250px;background-color:#ebeef1;"></div>
+	<footer>
+	<div id="footer" ></div>
+	</footer>
+</body>
+</html>
